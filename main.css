@@ -1,0 +1,228 @@
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*Colors*/
+  --white: #fff;
+  --primary: #1e293b;
+  --light-blue: #4f80f2;
+
+  /*Fonts*/
+  --font: "Poppins", sans-serif;
+
+  /*Font size*/
+  --fs-1: 4.8rem;
+  --fs-2: 3.6rem;
+  --fs-3: 3rem;
+  --fs-4: 2.4rem;
+  --fs-12: 2.2rem;
+  --fs-5: 1.8rem;
+  --fs-6: 1.6rem;
+  --fs-7: 1.4rem;
+  --fs-8: 1.2rem;
+  --fs-9: 1rem;
+  --fs-10: 1.1rem;
+  --fs-11: 0.9rem;
+
+  /*Font weight*/
+  --fw-100: 100;
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
+
+  /*Border radius*/
+  --radius-10: 1rem;
+  --radius-8: 0.8rem;
+  --radius-5: 0.5rem;
+  --radius-3: 0.3rem;
+  --radius-15: 1.5rem;
+  --radius-circle: 50%;
+  --radius-semi-circle: 100px;
+
+  /*Line height*/
+  --lh: 1.7;
+}
+
+html {
+  font-family: var(--font);
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+body.light {
+  background-color: var(--white);
+}
+.container {
+  display: flex;
+  width: 95%;
+  max-width: 300px;
+  flex-direction: column;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 50px, rgba(0, 0, 0, 0.1) -2px 0px 50px; */
+  margin-block: 50px;
+  align-items: center;
+  gap: 10px;
+}
+
+/*
+https://www.pngfind.com/pngs/m/438-4386602_intercom-icon-svg-hd-png-download.png
+*/
+
+.app-box {
+  background: var(--white);
+  border-radius: var(--radius-5);
+  overflow: hidden;
+}
+
+.app-box.light {
+  background: var(--primary);
+}
+.header {
+  position: relative;
+  background-color: var(--light-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 50px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+.sub-menu {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.app-name {
+  color: white;
+  font-size: var(--fs-6);
+  display: flex;
+  align-items: center;
+  font-weight: var(--fw-600);
+  gap: 5px;
+}
+
+.app-subname {
+  background-color: #3065e3;
+  font-size: var(--fs-9);
+  font-weight: var(--fw-600);
+  padding: 5px;
+  border-radius: var(--radius-3);
+}
+
+.app-description {
+  color: white;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+}
+
+.main {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.menu-list {
+  color: var(--primary);
+  font-size: var(--fs-7);
+  transition: 0.3s;
+}
+
+.main.light .menu-list {
+  color: var(--white);
+}
+
+.btn {
+  border: none;
+  color: var(--primary);
+  background: var(--white);
+  padding: 10px;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-5);
+  font-weight: var(--fw-600);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.main.light .btn {
+  background: var(--primary);
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+.btn:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.main.light .btn:hover {
+  background: var(--white);
+  color: var(--primary);
+}
+.check {
+  background: white;
+  width: 30px;
+  height: 20px;
+  border-radius: var(--radius-10);
+  position: relative;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+.indicator {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--primary);
+  border-radius: var(--radius-circle);
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+
+.check.light {
+  background: var(--primary);
+}
+
+.check.light .indicator {
+  background: var(--white);
+  transform: translateX(10px);
+  box-shadow: inset rgba(0, 0, 0, 0.1) 0px 2px 10px,
+    inset rgba(0, 0, 0, 0.1) -2px 0px 10px;
+}
